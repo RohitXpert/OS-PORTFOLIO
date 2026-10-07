@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>ROHIT.OS — Digital Universe | Rohit Garg</title>
+
+  <!-- SEO & Metadata -->
+  <meta name="description" content="ROHIT.OS — The interactive digital universe portfolio of Rohit Garg. 1st Year B.Tech CSE (AI & ML) in partnership with IBM at JECRC University, Jaipur. Aspiring AI Developer. Code. Creativity. Intelligence.">
+  <meta name="keywords" content="Rohit Garg, ROHIT.OS, AI Developer, JECRC University, CSE AI ML, Creative Technologist, Web Development, ChatGPT, C Language">
+  <meta name="author" content="Rohit Garg">
+  <meta name="theme-color" content="#020205">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="ROHIT.OS — Digital Universe | Rohit Garg">
+  <meta property="og:description" content="Explore an interactive digital cosmos powered by a Black Hole AI Core, Web Audio synthesizer, and cybernetic OS architecture.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/favicon.svg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Ambient CRT Atmosphere & Scanlines -->
+  <div class="scanlines-overlay" aria-hidden="true"></div>
+  <div class="vignette-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Dual-Ring Magnetic Cursor -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-follower" aria-hidden="true"></div>
+
+  <!-- Background Visual Canvases -->
+  <canvas id="canvas-cosmos" aria-hidden="true"></canvas>
+  <canvas id="canvas-blackhole" aria-hidden="true"></canvas>
+
+  <!-- =================================================================
+       SECTION 01: BOOT EXPERIENCE (DARK HACKER INTERFACE)
+       ================================================================= -->
+  <div id="boot-terminal-screen" role="dialog" aria-modal="true" aria-label="System Boot Sequence">
+    <div class="boot-header">
+      <div class="boot-sys-tag">
+        <span class="status-pip"></span>
+        <span>ROHIT.OS_KERNEL // SYSTEM_BOOT_SEQUENCE</span>
+      </div>
+      <button id="boot-skip-btn" class="boot-skip-btn" aria-label="Skip Boot Sequence">
+        [PRESS ESC // SKIP BOOT]
+      </button>
+    </div>
+
+    <div class="boot-terminal-body">
+      <div id="boot-log-container">
+        <!-- Log lines dynamically stream in here -->
+      </div>
+      <span class="boot-cursor-blink" aria-hidden="true"></span>
+
+      <div class="boot-progress-wrap">
+        <div class="boot-progress-bar">
+          <div id="boot-progress-fill" class="boot-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="boot-footer">
+      <span>NODE: JECRC_UNIVERSITY_JAIPUR</span>
+      <span>SECURITY: QUANTUM_PASS_VERIFIED</span>
+      <span>PRESS ANY KEY TO ACCELERATE</span>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       TOP SYSTEM HUD
+       ================================================================= -->
+  <header class="system-hud-top" role="banner">
+    <a href="#universe" class="hud-brand" aria-label="ROHIT.OS Home">
+      <img src="assets/favicon.svg" alt="Rohit.OS Logo" class="brand-glyph-svg">
+      <div class="brand-text">
+        <span class="brand-title">ROHIT.OS</span>
+        <span class="brand-subtitle">DIGITAL UNIVERSE // v2.6.0</span>
+      </div>
+    </a>
+
+    <nav aria-label="Primary Navigation">
+      <ul class="hud-nav-links">
+        <li><a href="#universe" class="hud-nav-link active">01. UNIVERSE</a></li>
+        <li><a href="#identity" class="hud-nav-link">02. IDENTITY</a></li>
+        <li><a href="#journey" class="hud-nav-link">03. JOURNEY</a></li>
+        <li><a href="#capability" class="hud-nav-link">04. CAPABILITY</a></li>
+        <li><a href="#project-archive" class="hud-nav-link">05. PROJECTS</a></li>
+        <li><a href="#mission-archive" class="hud-nav-link">06. MISSIONS</a></li>
+        <li><a href="#transmission" class="hud-nav-link">07. TRANSMISSION</a></li>
+      </ul>
+    </nav>
+
+    <div class="hud-telemetry">
+      <button id="hud-sound-toggle" class="hud-btn-toggle" aria-label="Toggle procedural audio">
+        <span class="status-pip"></span>
+        <span id="hud-sound-label">SOUND: OFF</span>
+      </button>
+
+      <button id="hud-perf-toggle" class="hud-btn-toggle" aria-label="Toggle performance mode">
+        <span id="hud-perf-badge">AUTO [HIGH]</span>
+      </button>
+
+      <button class="cmd-trigger-btn" aria-label="Open Command Center palette">
+        <span>COMMAND</span>
+        <span class="cmd-trigger-key">CTRL+K</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       FLOATING BOTTOM STATUS PILL
+       ================================================================= -->
+  <aside class="system-hud-bottom" role="complementary" aria-label="System status telemetry">
+    <div class="bottom-pill-item">
+      <span class="status-pip"></span>
+      <span id="hud-section-pill">SECTOR: UNIVERSE</span>
+    </div>
+    <div class="bottom-pill-item bottom-telemetry-text">
+      <span style="color: var(--purple-energy);">✦</span>
+      <span>JECRC • CSE AI &amp; ML</span>
+    </div>
+    <div class="bottom-pill-item">
+      <span style="color: var(--text-mono);">⚡</span>
+      <span id="hud-fps-indicator">60 FPS</span>
+    </div>
+  </aside>
+
+  <!-- =================================================================
+       MAIN CONTENT WORLD (ONE CONTINUOUS UNIVERSE)
+       ================================================================= -->
+  <main id="main-content">
+
+    <!-- -------------------------------------------------------------
+         02 — UNIVERSE / HERO
+         ------------------------------------------------------------- -->
+    <section id="universe" class="hero-section" aria-label="Digital Universe Hero">
+      <div class="container hero-content">
+        <div class="hero-supertitle">
+          <span class="system-badge">ROHIT GARG // 1ST YEAR B.TECH CSE (AI &amp; ML)</span>
+          <span class="system-badge purple">JECRC UNIVERSITY</span>
+        </div>
+
+        <h1 class="hero-main-title glitch-text" data-text="WELCOME TO MY DIGITAL UNIVERSE.">
+          WELCOME TO MY<br>DIGITAL UNIVERSE.
+        </h1>
+
+        <p class="hero-lead-text">
+          Bridging algorithmic intelligence, modern web architecture, and creative exploration from the event horizon of code.
+        </p>
+
+        <div class="hero-signature-wrap">
+          <span class="status-pip"></span>
+          <span class="hero-signature">CODE. CREATIVITY. INTELLIGENCE.</span>
+          <span class="status-pip purple"></span>
+        </div>
+
+        <div class="hero-action-group">
+          <a href="#identity" class="cyber-btn solid">
+            <span>EXPLORE UNIVERSE</span>
+            <span>↓</span>
+          </a>
+          <button class="cyber-btn cmd-trigger-btn">
+            <span>COMMAND PALETTE</span>
+            <span>[CTRL+K]</span>
+          </button>
+          <button class="cyber-btn purple" onclick="rohitApp.openResumeModal()">
+            <span>INSPECT RESUME</span>
+            <span>↗</span>
+          </button>
+        </div>
+      </div>
+
+      <a href="#identity" class="scroll-telemetry-indicator" aria-label="Scroll to Identity section">
+        <span>DESCEND INTO IDENTITY</span>
+        <div class="scroll-indicator-needle"></div>
+      </a>
+    </section>
+
+    <!-- -------------------------------------------------------------
+         03 — IDENTITY SECTION
+         ------------------------------------------------------------- -->
+    <section id="identity" class="section-wrapper" aria-label="Identity and Profile">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">03 // IDENTITY SCAN</div>
+          <h2 class="section-title">ROHIT.OS IDENTITY SCAN</h2>
+          <p class="section-subtitle">
+            Student explorer navigating computational logic, neural models, and visual craftsmanship.
+          </p>
+        </div>
+
+        <div class="identity-grid">
+          <!-- Portrait & Interactive Photo Card -->
+          <div class="identity-portrait-card">
+            <div class="hud-corner-tl"></div>
+            <div class="hud-corner-tr"></div>
+            <div class="hud-corner-bl"></div>
+            <div class="hud-corner-br"></div>
+
+            <div id="portrait-display-frame" class="portrait-display-frame" title="Click to reveal silhouette or replace photo">
+              <!-- Photo slot (ready for real photo or user file replacement) -->
+              <img id="portrait-photo-element" class="portrait-photo-element" src="data:," alt="Rohit Garg portrait" style="display: none;">
+
+              <!-- Clearly marked photo placeholder & silhouette -->
+              <div id="portrait-silhouette-placeholder" class="portrait-silhouette-placeholder">
+                <div class="silhouette-icon-wrap">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="mono" style="font-size: 0.82rem; color: #fff; font-weight: 600;">PORTRAIT MATRIX READY</div>
+                <div class="mono" style="font-size: 0.72rem; color: var(--text-muted); margin-top: 4px;">Click to toggle silhouette / insert photo</div>
+                <div class="portrait-upload-trigger">DROP PHOTO // CLICK TO REPLACE</div>
+              </div>
+
+              <!-- Cybernetic scan beam overlay -->
+              <div class="identity-scan-overlay" aria-hidden="true"></div>
+            </div>
+
+            <!-- Hidden file input for live photo insertion -->
+            <input type="file" id="portrait-file-input" accept="image/*" style="display: none;">
+
+            <div style="margin-top: 18px; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-weight: 700; color: #fff; font-size: 1.1rem;">ROHIT GARG</div>
+                <div class="mono" style="font-size: 0.75rem; color: var(--electric-blue);">AI DEVELOPER TRACK</div>
+              </div>
+              <span class="system-badge">JAIPUR, IN</span>
+            </div>
+          </div>
+
+          <!-- Bio Story & Education Telemetry -->
+          <div class="identity-content-block">
+            <div id="identity-bio-container" class="identity-bio-text">
+              <!-- Dynamically hydrated from ROHIT_DATA -->
+            </div>
+
+            <!-- Truthful Education Card -->
+            <div class="education-telemetry-card">
+              <div class="hud-corner-tr"></div>
+              <div id="education-telemetry-content">
+                <!-- Dynamically hydrated from ROHIT_DATA -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------------------------------------------
+         04 — JOURNEY
+         ------------------------------------------------------------- -->
+    <section id="journey" class="section-wrapper" aria-label="Student Journey">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">04 // PROGRESSION ARCHIVE</div>
+          <h2 class="section-title">THE STUDENT JOURNEY</h2>
+          <p class="section-subtitle">
+            From student beginnings to future AI developer — an unbroken trajectory of curiosity, logic, and relentless practice.
+          </p>
+        </div>
+
+        <div id="journey-timeline-list" class="journey-timeline">
+          <!-- Dynamically hydrated from ROHIT_DATA -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------------------------------------------
+         05 — CAPABILITY SYSTEM
+         ------------------------------------------------------------- -->
+    <section id="capability" class="section-wrapper" aria-label="Technical Capabilities">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">05 // CAPABILITY MATRIX</div>
+          <h2 class="section-title">CONFIRMED CAPABILITIES</h2>
+          <p class="section-subtitle">
+            Strictly confirmed technical competencies. Grounded in fundamentals, accelerating with AI tools.
+          </p>
+        </div>
+
+        <div id="capability-matrix-list" class="capability-grid">
+          <!-- Dynamically hydrated from ROHIT_DATA -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------------------------------------------
+         06 — PROJECT ARCHIVE
+         ------------------------------------------------------------- -->
+    <section id="project-archive" class="section-wrapper" aria-label="Project Archive">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">06 // PROJECT ARCHIVE</div>
+          <h2 class="section-title">INTERACTIVE PROJECT ARCHIVE</h2>
+          <p class="section-subtitle">
+            Curated software prototypes, algorithmic experiments, and cosmic web environments. Click any project to open its comprehensive case study.
+          </p>
+        </div>
+
+        <div id="projects-grid-list" class="projects-grid">
+          <!-- Dynamically hydrated from ROHIT_DATA -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------------------------------------------
+         07 — MISSION ARCHIVE
+         ------------------------------------------------------------- -->
+    <section id="mission-archive" class="section-wrapper" aria-label="Mission Archive">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">07 // MISSION ARCHIVE</div>
+          <h2 class="section-title">ACADEMIC MISSIONS &amp; MILESTONES</h2>
+          <p class="section-subtitle">
+            Confirmed achievements and prospective engagements. Maintained with absolute factual integrity.
+          </p>
+        </div>
+
+        <div id="mission-grid-list" class="missions-grid">
+          <!-- Dynamically hydrated from ROHIT_DATA -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------------------------------------------
+         08 — TRANSMISSION (CONTACT & SOCIALS)
+         ------------------------------------------------------------- -->
+    <section id="transmission" class="section-wrapper" aria-label="Transmission and Contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">08 // TRANSMISSION</div>
+          <h2 class="section-title">TRANSMISSION TERMINAL</h2>
+          <p class="section-subtitle">
+            Dispatch an encrypted signal directly to Rohit or connect across verified channels.
+          </p>
+        </div>
+
+        <div class="transmission-layout">
+          <!-- Cybernetic Contact Terminal Form -->
+          <div class="cyber-card">
+            <div class="hud-corner-tl"></div>
+            <div class="hud-corner-tr"></div>
+            <div class="hud-corner-bl"></div>
+            <div class="hud-corner-br"></div>
+
+            <div class="mono" style="font-size: 0.8rem; color: var(--electric-blue); margin-bottom: 20px;">
+              // SECURE ENCRYPTED UPLINK PROTOCOL
+            </div>
+
+            <form id="transmission-contact-form" class="transmission-form">
+              <div class="form-group">
+                <label for="tx-sender-name" class="form-label">OPERATOR IDENTIFIER [NAME]</label>
+                <input type="text" id="tx-sender-name" class="cyber-input" placeholder="e.g. Alex Mercer" required>
+              </div>
+
+              <div class="form-group">
+                <label for="tx-sender-email" class="form-label">RETURN COMM FREQUENCY [EMAIL]</label>
+                <input type="email" id="tx-sender-email" class="cyber-input" placeholder="e.g. operator@domain.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="tx-sender-subject" class="form-label">TRANSMISSION SUBJECT</label>
+                <input type="text" id="tx-sender-subject" class="cyber-input" placeholder="AI Collaboration / Tech Inquiry" required>
+              </div>
+
+              <div class="form-group">
+                <label for="tx-sender-message" class="form-label">PAYLOAD DATA [MESSAGE]</label>
+                <textarea id="tx-sender-message" class="cyber-textarea" rows="4" placeholder="Enter transmission telemetry..." required></textarea>
+              </div>
+
+              <div id="transmission-status-feedback"></div>
+
+              <button type="submit" class="cyber-btn solid" style="width: 100%;">
+                <span>DISPATCH TRANSMISSION</span>
+                <span>⚡</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Socials Uplink & Resume Direct Action -->
+          <div class="transmission-info-panel">
+            <div class="cyber-card">
+              <div class="hud-corner-tl"></div>
+              <div class="hud-corner-br"></div>
+              <div class="mono" style="font-size: 0.8rem; color: var(--purple-energy); margin-bottom: 14px;">
+                // VERIFIED TELEMETRY CHANNELS
+              </div>
+
+              <div id="transmission-socials-list" class="transmission-socials-grid">
+                <!-- Dynamically hydrated from ROHIT_DATA -->
+              </div>
+            </div>
+
+            <div class="cyber-card">
+              <div class="hud-corner-tl"></div>
+              <div class="hud-corner-br"></div>
+              <div class="mono" style="font-size: 0.8rem; color: var(--electric-blue); margin-bottom: 8px;">
+                // FORMAL DOSSIER EXPORT
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 16px;">
+                Access Rohit's interactive, ATS-compliant fresher resume. Fully formatted for direct A4 print and PDF download.
+              </p>
+              <button class="cyber-btn purple" style="width: 100%;" onclick="rohitApp.openResumeModal()">
+                <span>LAUNCH INTERACTIVE RESUME</span>
+                <span>📄</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================================================================
+       SYSTEM FOOTER & SHUTDOWN TRIGGER
+       ================================================================= -->
+  <footer class="section-wrapper" style="min-height: auto; padding-block: 40px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <div class="mono" style="font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.15em;">
+          ROHIT.OS DIGITAL UNIVERSE // DESIGNED &amp; ENGINEERED FOR ROHIT GARG
+        </div>
+        <div class="hero-signature" style="font-size: 0.75rem;">CODE. CREATIVITY. INTELLIGENCE.</div>
+
+        <button id="system-shutdown-trigger" class="cyber-btn" style="border-color: rgba(239, 68, 68, 0.4); color: #fca5a5; font-size: 0.75rem; padding: 6px 16px;">
+          <span>POWER DOWN // SHUTDOWN SESSION</span>
+          <span>⏻</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================================================================
+       MODAL 1: COMMAND CENTER PALETTE (CTRL+K)
+       ================================================================= -->
+  <div id="command-center-modal" class="command-center-modal" role="dialog" aria-modal="true" aria-label="Command Center">
+    <div class="command-center-box">
+      <div class="cmd-input-row">
+        <span class="cmd-prompt-glyph">></span>
+        <input type="text" id="cmd-input-field" class="cmd-input-field" placeholder="Type a directive (e.g. 'show projects', 'open resume', 'contact')..." autocomplete="off" spellcheck="false">
+        <button class="modal-close-btn" style="position: static; width: 28px; height: 28px;" onclick="rohitCommandCenter.close()">✕</button>
+      </div>
+
+      <div id="cmd-quick-chips" class="cmd-quick-chips">
+        <!-- Dynamically hydrated chips -->
+      </div>
+
+      <ul id="cmd-results-list" class="cmd-results-list">
+        <!-- Dynamically filtered results -->
+      </ul>
+
+      <div style="padding: 8px 16px; background: rgba(0,0,0,0.5); font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-dim); display: flex; justify-content: space-between;">
+        <span>NAV: ↑ ↓ TO SELECT</span>
+        <span>EXEC: ENTER</span>
+        <span>EXIT: ESC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       MODAL 2: FULL-SCREEN CASE STUDY VIEWER
+       ================================================================= -->
+  <div id="case-study-modal" class="case-study-modal" role="dialog" aria-modal="true" aria-label="Case Study Viewer">
+    <div class="case-study-container">
+      <button class="modal-close-btn" aria-label="Close Case Study">✕</button>
+      <div id="case-study-content">
+        <!-- Dynamically hydrated case study details -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       MODAL 3: INTERACTIVE RESUME DOSSIER
+       ================================================================= -->
+  <div id="resume-modal" class="resume-modal" role="dialog" aria-modal="true" aria-label="Interactive Resume Dossier">
+    <div class="resume-dossier-card">
+      <button class="modal-close-btn no-print" aria-label="Close Resume">✕</button>
+      <div id="resume-dossier-content">
+        <!-- Dynamically hydrated resume dossier -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       MODAL 4: CINEMATIC SHUTDOWN SCREEN
+       ================================================================= -->
+  <div id="shutdown-overlay-screen" aria-label="System Session Complete Screen">
+    <div class="shutdown-singularity-dot"></div>
+    <h2 class="shutdown-title">ROHIT GARG</h2>
+    <div class="shutdown-signature">CODE. CREATIVITY. INTELLIGENCE.</div>
+
+    <div style="display: flex; gap: 18px; margin-bottom: 28px; flex-wrap: wrap; justify-content: center;">
+      <a href="https://github.com/RohitXpert" target="_blank" rel="noopener" class="cyber-btn" style="padding: 6px 14px; font-size: 0.75rem;">GITHUB</a>
+      <a href="https://instagram.com/Rohit_garg2008" target="_blank" rel="noopener" class="cyber-btn" style="padding: 6px 14px; font-size: 0.75rem;">INSTAGRAM</a>
+      <a href="mailto:rohitgarg200807@gmail.com" class="cyber-btn" style="padding: 6px 14px; font-size: 0.75rem;">EMAIL</a>
+    </div>
+
+    <button id="shutdown-reboot-btn" class="cyber-btn solid">
+      <span>REBOOT ROHIT.OS</span>
+      <span>↺</span>
+    </button>
+
+    <div class="shutdown-status-tag">// ROHIT.OS — SESSION COMPLETE //</div>
+  </div>
+
+  <!-- JavaScript Engines & Modules -->
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/audio-synthesizer.js"></script>
+  <script src="js/performance-monitor.js"></script>
+  <script src="js/starfield-background.js"></script>
+  <script src="js/black-hole-core.js"></script>
+  <script src="js/command-center.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

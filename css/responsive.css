@@ -1,0 +1,169 @@
+/* ===================================================================
+   ROHIT.OS — RESPONSIVE & MOBILE TOUCH-FIRST STYLES
+   =================================================================== */
+
+/* Tablet & Smaller Desktops */
+@media (max-width: 1024px) {
+  :root {
+    --space-3xl: 80px;
+    --space-2xl: 50px;
+  }
+
+  .identity-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .identity-portrait-card {
+    max-width: 480px;
+    margin-inline: auto;
+    width: 100%;
+  }
+
+  .transmission-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 18px;
+    --space-3xl: 60px;
+    --space-2xl: 36px;
+    --space-xl: 28px;
+    --space-lg: 20px;
+  }
+
+  /* Hide custom cursor on touch devices to ensure native touch feel */
+  .custom-cursor,
+  .custom-cursor-follower {
+    display: none !important;
+  }
+
+  body {
+    cursor: auto !important;
+  }
+
+  /* HUD Mobile Reflow */
+  .system-hud-top {
+    height: 56px;
+  }
+
+  .hud-nav-links {
+    display: none; /* Accessible via Command Center & Quick Jump on mobile */
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .system-hud-bottom {
+    bottom: 12px;
+    padding: 4px 14px;
+    font-size: 0.68rem;
+    gap: 10px;
+    width: calc(100% - 24px);
+    justify-content: space-around;
+  }
+
+  .bottom-telemetry-text {
+    display: none;
+  }
+
+  /* Hero Mobile */
+  .hero-main-title {
+    font-size: clamp(2.2rem, 10vw, 3.4rem);
+  }
+
+  .hero-signature-wrap {
+    padding: 6px 16px;
+    gap: 8px;
+  }
+
+  .hero-signature {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* Journey Timeline Mobile */
+  .journey-timeline::before {
+    left: 18px;
+  }
+
+  .journey-node-row {
+    padding-left: 0;
+    gap: var(--space-md);
+  }
+
+  .journey-orbital-dot {
+    width: 36px;
+    height: 36px;
+    font-size: 0.72rem;
+  }
+
+  .journey-card {
+    padding: var(--space-md);
+  }
+
+  /* Grid Reductions */
+  .projects-grid,
+  .capability-grid,
+  .missions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transmission-socials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Command Center Mobile Drawer Behavior */
+  .command-center-modal {
+    padding-top: 5vh;
+    padding-inline: 12px;
+  }
+
+  .command-center-box {
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .case-study-modal,
+  .resume-modal {
+    padding: 10px;
+  }
+
+  .case-study-container,
+  .resume-dossier-card {
+    padding: var(--space-md);
+    max-height: 94vh;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .hero-action-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cyber-btn {
+    width: 100%;
+  }
+
+  .hud-btn-toggle span {
+    display: none;
+  }
+}
+
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--electric-blue);
+  outline-offset: 3px;
+  box-shadow: 0 0 12px var(--electric-blue);
+}

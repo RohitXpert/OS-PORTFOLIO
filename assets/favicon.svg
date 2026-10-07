@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Deep Space Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0a0a1a"/>
+      <stop offset="100%" stop-color="#020206"/>
+    </radialGradient>
+    
+    <!-- Accretion Disk Glow -->
+    <radialGradient id="accretionGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="40%" stop-color="rgba(0, 240, 255, 0.9)"/>
+      <stop offset="65%" stop-color="rgba(168, 85, 247, 0.7)"/>
+      <stop offset="100%" stop-color="rgba(3, 3, 8, 0)"/>
+    </radialGradient>
+
+    <!-- Photon Ring Gradient -->
+    <linearGradient id="photonRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <!-- Glowing R Gradient -->
+    <linearGradient id="rGlyph" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#00f0ff"/>
+    </linearGradient>
+
+    <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer Canvas Base -->
+  <rect width="64" height="64" rx="14" fill="url(#bgGlow)"/>
+
+  <!-- Accretion Disk Ring & Gravitational Lensing -->
+  <ellipse cx="32" cy="32" rx="28" ry="12" fill="none" stroke="url(#accretionGlow)" stroke-width="3.5" transform="rotate(-24 32 32)" filter="url(#neonGlow)"/>
+  <ellipse cx="32" cy="32" rx="24" ry="7" fill="none" stroke="url(#photonRing)" stroke-width="1.8" transform="rotate(-24 32 32)"/>
+
+  <!-- Event Horizon Singularity -->
+  <circle cx="32" cy="32" r="14" fill="#010103" stroke="#00f0ff" stroke-width="1.2" filter="url(#neonGlow)"/>
+
+  <!-- Futuristic "R" Glyphic Monogram inside the Singularity -->
+  <path d="M26 21 H33.5 C37.5 21 39.5 23 39.5 26.5 C39.5 29.5 37.5 31.5 34 32 L40 43 H35.5 L30.2 33 H29 V43 H26 V21 Z M29 24 V30 H33.2 C35.2 30 36.5 29 36.5 27 C36.5 25 35.2 24 33.2 24 Z" 
+        fill="url(#rGlyph)" 
+        filter="url(#neonGlow)"/>
+
+  <!-- Orbital Relativistic Energy Nodes -->
+  <circle cx="12" cy="24" r="1.5" fill="#00f0ff" filter="url(#neonGlow)"/>
+  <circle cx="51" cy="40" r="1.5" fill="#a855f7" filter="url(#neonGlow)"/>
+  <circle cx="44" cy="18" r="1" fill="#ffffff"/>
+  <circle cx="19" cy="45" r="1" fill="#38bdf8"/>
+</svg>
